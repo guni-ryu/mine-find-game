@@ -296,12 +296,16 @@ int main()
             system("cls");
             setting(check, inputcol, inputrow);
             
-            int x, y;
-            printf("확인할 좌표를 입력해주세요.(x, y) : ");
-            scanf("%d, %d", &x, &y);
-            printf("\n");
-            
-            
+            int x = 0;
+            int y = 0;
+
+            do
+            {
+                printf("확인할 좌표를 입력해주세요.(x, y) : ");
+                scanf("%d, %d", &x, &y);
+                printf("\n");
+            } while (x < 0 || y < 0 || x > inputcol || y > inputrow);          
+                         
             if(map[x][y] == 0)
             {
                 check[x][y] = 0;
